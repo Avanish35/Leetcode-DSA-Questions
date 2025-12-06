@@ -1,6 +1,6 @@
-Leetcode Link: https://leetcode.com/problems/count-partitions-with-even-sum-difference/submissions/1847656873/
+//Leetcode Link: https://leetcode.com/problems/count-partitions-with-even-sum-difference/submissions/1847656873/
 
-JAVA CODE:
+//   JAVA CODE:
 
 class Solution {
     public int countPartitions(int[] nums) {
