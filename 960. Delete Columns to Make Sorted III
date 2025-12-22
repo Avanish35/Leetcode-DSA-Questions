@@ -1,0 +1,30 @@
+// LEETCODE LINK : https://leetcode.com/submissions/detail/1862323762/
+
+// JAVA CODE : 
+
+class Solution {
+    public int minDeletionSize(String[] strs) {
+        int n = strs.length;
+        int m = strs[0].length();
+        int[] dp = new int[m];
+        int max = 1;
+        for (int i = 0; i < m; i++) {
+            dp[i] = 1;
+            for (int j = 0; j < i; j++) {
+                if (isValid(strs, j, i)) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+            max = Math.max(max, dp[i]);
+        }
+        return m - max;
+    }
+    private boolean isValid(String[] strs, int j, int i) {
+        for (String s : strs) {
+            if (s.charAt(j) > s.charAt(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
